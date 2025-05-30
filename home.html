@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Review Blog</title>
+    <link rel="icon" href="gambar/f.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+/* Header */
+    header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 110px;
+    margin-right: 110px;
+    padding: 20px 200px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    }
+
+    .kotak-header {
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 163, 163, 1);
+        border-radius: 20px;
+        width: 450px;
+        height: 60px;
+        justify-content: center;
+        gap: 30px;
+        margin-right: 30px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header span {
+        color: #ff4d4d;
+        font-size: 19px;
+        font-weight: 900;
+        font-family: sans-serif;
+        font-weight: bold;
+
+    }
+
+    header button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    button:hover {
+        transform: translate(-2px, -1px);
+    }
+
+    .orang {
+        margin-left: 345px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .orang span {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    /* Header */
+
+
+    /* Carousel */
+    .main-carousel{
+        display: flex;
+        justify-content: center;
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+    .carousel {
+        width: 1250px;
+        height: 560px;
+        background: linear-gradient(to bottom, #fff5f5 0%, #f5a8a8 40%, #f29999 100%);        
+        border-radius: 29px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-around;
+        gap: 20px;
+    }
+    .carousel .img-center {
+        width: 800px;
+        height: 460px;
+        border-radius: 300px;
+        transition: opacity 0.5s ease-in-out;
+        opacity: 1;        
+    }
+
+.arrow {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    align-items: right;
+    justify-content: space-around;
+}
+
+.arrow:hover {
+    transform: scale(0.9);
+}
+
+/* Carousel */
+/* Recent */
+
+.img-r {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+    gap: 35px;
+}
+
+.img-r img {
+    cursor: pointer;
+    width: 420px;
+    border-radius: 55px;
+    border: 1px solid rgb(171, 171, 171);
+    transition: 0.3s;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.44);
+}
+
+.recent-p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 355px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 50px;
+}
+.img-r img:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 2px 6px 8px 0px rgba(0, 0, 0, 0.44);
+}
+
+/* Pinned */
+
+.review-main {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.review {
+    position: relative; 
+    width: 400px;
+    height: 400px;
+    background-color: rgba(243, 243, 243, 1);
+    border-radius: 43px;
+    margin-bottom: 200px;
+    -webkit-box-shadow: 18px 10px 57px -43px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 18px 10px 57px -43px rgba(66, 68, 90, 1);
+    box-shadow: 18px 10px 57px -43px rgba(66, 68, 90, 1);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.review:hover {
+    transform: translate(-1px,-1px);
+    box-shadow: 20px 12px 57px -36px rgba(66, 68, 90, 1);
+}
+
+.review img {
+    display: flex;
+    border-radius: 50%;
+    margin-left: 40px;
+    margin-top: -50px;
+}
+.review-span {
+    margin-left: 355px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 130px;
+}
+
+.star-rating {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 35px;
+    color: #FFB90A;
+    letter-spacing: 5px;
+}
+.review h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.review p {
+    text-align: center;
+    padding: 82px;
+    font-size: 20px;
+    margin-top: -60px;
+}
+
+/*  */
+
+.deal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 350px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 200px;
+}
+
+.deal img {
+    width: 45px;
+}
+
+/* Footer */
+
+
+.footer {
+  background: #f8f8f8;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  font-family: Arial, sans-serif;
+  color: #444;
+}
+
+.footer-top {
+  margin-right: 15%;
+  margin-left: 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.logo-area {
+  max-width: 250px;
+  margin-right: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 110px;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.footer-section h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section li {
+  cursor: pointer;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 0px;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #999;
+}
+
+.footer-name {
+  color: orange;
+  font-weight: bold;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+
+.bulet {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #F7F7F9;
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.bulet:hover {
+    transform: translate(-1px,-1px);
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0px;
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img width="100px" src="gambar/logo.png">
+        <span>Food Review Blog</span>
+        </div>
+
+            <div class="kotak-header">
+                <button style="color: black; background: white; width: 80px; border-radius: 20px; height: 20px;">Home</a></button>
+                <button><a href="restaurant.html">Restaurant</a></button>
+                <button><a href="aboutfood.html">Newsfeed</a></button>
+                <button onclick="confirmLogout()">Logout</button>
+            </div>
+</header>
+    <div class="orang">
+        <span>Hi,</span>
+        <img width="90px" src="gambar/orang.png">
+    </div>
+
+    <!-- Carousel -->
+
+    <div class="main-carousel">
+        <div class="carousel">
+    <img src="gambar/arrowl.png" class="arrow" onclick="prevSlide()">
+            <img class="img-center" id="carousel-image" src="gambar/burgers.png">
+    <img src="gambar/arrowr.png" class="arrow" onclick="nextSlide()">
+        </div>
+    </div>
+
+    <!-- Carousel -->
+
+    <!-- Recent Post -->
+
+    <div class="recent-p">
+        <span>Recent Post</span>
+        <img width="30px" src="gambar/up.png">
+    </div>
+    
+        <div class="img-r">
+            <img src="gambar/burgerp.png">
+            <img src="gambar/ciken.png">
+            <img src="gambar/pizza.png">
+        </div>
+
+    <!-- Review -->
+    <div class="review-span">
+        <span>Pinned Review</span>
+        <img width="40px" src="gambar/pin.png">
+    </div>
+<div class="review-main">
+  <div class="review">
+    <div class="star-rating">★★★★★</div>
+    <img width="110px" src="gambar/orang1.png">
+    <h2>Lioness M</h2>
+    <p>Its beautiful place.. Lovly creative tasty cakes.. Doughnuts are die for... Even with 1kg you can get designer cakes... I always buy cakes there for any function in my house</p>
+  </div>
+
+  <div class="review">
+    <div class="star-rating">★★★★<span style="color: #BDBDBD;">★</span></div>
+    <img width="110px" src="gambar/orang2.png">
+    <h2>Vinodhini Rajasekhar</h2>
+    <p>Most suitable place for low budget foodie. Price is reasonable and it is served properly.I ate french fries and sandwich which tasted good here.</p>
+  </div>
+
+  <div class="review">
+    <div class="star-rating">★★★★★</div>
+    <img width="110px" src="gambar/orang3.png">
+    <h2>Manivanna Kamaraj</h2>
+    <p>Has become my regular place to by cakes. Wonderful taste and economical price compared to other cake shops.</p>
+  </div>
+</div>
+    <!-- Premium Deals -->
+    <div class="deal">
+        <span>Premium Deals</span>
+        <img src="gambar/premium.png">
+    </div>
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-section logo-area">
+      <img src="gambar/logo.png" alt="Logo" class="footer-logo" />
+      <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit. Mattis, tenetur.</p>
+      
+      <div class="footer-social">
+        <div class="bulet">
+            <img src="gambar/fb.png" alt="Facebook" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/twt.png" alt="Twitter" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/ig.png" alt="Instagram" />
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="footer-section">
+      <h2>Locations</h2>
+      <ul>
+        <li>Ambattur</li>
+        <li>Avadi</li>
+        <li>Thirumullaivoyal</li>
+        <li>Poonamallee</li>
+        <li>Mugappair</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="premier.html">Premier</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>Gallery</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Company</h2>
+      <ul>
+        <li>Terms & Conditions<a href="ketentuansyarat.html"></a></li>
+        <li>Privacy Policy</li>
+        <li>Cookie Policy</li>
+      </ul>
+    </div>
+  </div>
+
+<hr style="margin-top: 20px;">
+
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2022 <span class="footer-name">Majharul</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+<script>
+  const images = [
+    "gambar/burgers.png",
+    "gambar/car3.png",
+    "gambar/car2.png"
+  ];
+
+  let currentIndex = 0;
+  const imageEl = document.getElementById("carousel-image");
+
+  function showImage(index) {
+    imageEl.style.opacity = 0;
+    setTimeout(() => {
+      imageEl.src = images[index];
+      imageEl.style.opacity = 1;
+    }, 200);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+  }
+
+  // ⬇️ Panggil saat halaman pertama kali dibuka
+  showImage(currentIndex);
+
+
+
+  // 
+
+
+
+          //log out
+        function confirmLogout() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Kamu Yakin?',
+        text: 'Kamu bakalan keluar dari akunmu loh!',
+        showCancelButton: true,
+        confirmButtonText: 'Iya, Logout',
+        cancelButtonText: 'Batal',
+        allowOutsideClick: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Simulasi logout
+          Swal.fire({
+            icon: 'Berhasil',
+            title: 'Logged Out!',
+            text: 'Cape ah kuar aja lu sono.',
+            confirmButtonText: 'Balik Ke Halaman Login',
+            allowOutsideClick: false,
+          }).then(() => {
+            // ke login.html
+            window.location.href = 'index.html';
+          });
+        }
+      });
+    }
+</script>
+</body>
+</html>

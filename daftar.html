@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Food Review Blog</title>
+    <link rel="icon" href="gambar/f.png" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          font-family: Arial, sans-serif;
+        }
+
+        body {
+          background: url(gambar/bg0.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+        }
+        .main {
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          width: 100%;
+        }
+        .kotak {
+          border-radius: 60px;
+          margin-right: 200px;
+          width: 690px;
+          height: 580px;
+          background-color: rgba(231, 210, 210, 1);          
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .imgg {
+          margin-top: -50px;
+          margin-bottom: 80px;        
+          width: 120px;
+          height: 75px;
+          border-radius: 51px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: rgba(217, 217, 217, 1);
+          box-shadow: -1px 4px 3px -1px rgba(0,0,0,0.31); 
+        }
+
+        form {
+          display: flex;
+          flex-direction: column;
+          width: 600px;
+          gap: 23px;
+          margin-top: -44px;
+        }
+
+        .kotak-form {
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+        }
+
+        label {
+          font-weight: bold;
+          font-size: 18px;
+          width: 120px;
+          height: 70px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+          padding-right: 10px;
+        }
+
+        input {
+          width: 410px;
+          height: 70px;
+          padding: 38px;
+          border: none;
+          border-radius: 28px;
+          box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+          font-size: 15px;
+          display: flex;
+          text-align: center;
+        }
+
+        .buttons {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-left: 187px;
+          margin-top: 10px;
+        }
+
+        .buttons button {
+          width: 187px;
+          height: 50px;
+          padding: 12px 20px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          cursor: pointer;
+          border: none;
+          border-radius: 45px;
+          font-size: 16px;
+          font-weight: bold;
+          color: white;
+          gap: 0px;
+          transition: all 0.3s ease;
+        }
+        
+        .buttons .login1 {
+          background-color: rgba(110, 177, 216, 1);
+        }
+
+        .buttons .register {
+          background-color: rgba(31, 119, 168, 1);
+        }
+
+        button:hover {
+          transform: scale(1.05);
+          box-shadow: 2px 6px 16px rgba(0, 0, 0, 0.25);
+          opacity: 0.95;
+        }
+
+        /* SweetAlert2 custom styling sesuai style kamu */
+        .swal2-popup {
+          border-radius: 10px !important;
+        }
+
+        .swal2-title {
+          font-size: 24px !important;
+          font-weight: bold !important;
+        }
+
+        .swal2-confirm,
+        .swal2-cancel {
+          font-size: 16px !important;
+          padding: 10px 24px !important;
+          border-radius: 8px !important;
+        }
+
+        .custom-confirm {
+            width: 180px;
+            background-color: #00C897 !important;
+            color: white !important;
+            font-weight: bold !important;
+            font-size: 16px !important;
+            padding: 12px 30px !important;
+            border-radius: 4px !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        .custom-cancel {
+            width: 180px;
+            background-color: #e0e6ed !important;
+            color: #6c7a89 !important;
+            font-weight: bold !important;
+            font-size: 16px !important;
+            padding: 12px 30px !important;
+            border-radius: 4px !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        a {
+          text-decoration: none;
+          color: white;
+        }
+
+        /* Responsive */
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="kotak">
+            <div class="imgg">
+                <img width="55px" src="gambar/regis.png" alt="" />
+            </div>
+
+            <form id="registerForm">
+                <div class="kotak-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="majharul" required />
+                </div>
+                <div class="kotak-form">
+                    <label for="gmail">Gmail:</label>
+                    <input type="email" id="email" name="email" placeholder="majharul.islam93@northsouth.edu" required />
+                </div>   
+                <div class="kotak-form">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="userpassword" required />
+                </div>     
+                <div class="kotak-form">
+                    <label for="confirm">Confirm<br>Password:</label>
+                    <input type="password" id="confirm" name="confirm" placeholder="confirmpassword" required />
+                </div>
+                <div class="buttons">
+                    <button type="submit" class="register">
+                        <span class="text">Register</span><img width="34px" src="gambar/reg.png" alt="" />
+                    </button>
+                    <button type="button" class="login1" id="loginBtn">
+                        <span class="text"><a href="index.html">Login</a></span><img align="right" width="34px" src="gambar/log.png" alt="" />
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+<script>
+  // Fungsi popup register sukses dengan style popup yang kamu kasih
+  function showRegisterSuccess() {
+Swal.fire({
+  title: '<strong>Success 😍</strong>',
+  text: 'Woah, successfully completed.',
+  icon: 'success',
+  iconColor: '#00C897',
+  background: '#ffffff',
+  showCancelButton: true,
+  confirmButtonText: 'Login',
+  cancelButtonText: 'Cancel',
+  confirmButtonColor: '#00C897', // tosca
+  cancelButtonColor: '#e0e6ed',   // abu muda
+  reverseButtons: true,
+  customClass: {
+    confirmButton: 'custom-confirm',
+    cancelButton: 'custom-cancel'
+  }
+}).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'index.html';
+      }
+    });
+  }
+
+  // Tangkap form dan tombol
+  const registerForm = document.getElementById('registerForm');
+  const loginBtn = document.getElementById('loginBtn');
+
+  registerForm.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Validasi password dan confirm password sama
+    const password = document.getElementById('password').value;
+    const confirm = document.getElementById('confirm').value;
+
+    if (password !== confirm) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Password and Confirm Password do not match!',
+        confirmButtonColor: '#e74c3c',
+      });
+      return;
+    }
+
+
+    showRegisterSuccess();
+  });
+
+
+  loginBtn.addEventListener('click', () => {
+    window.location.href = 'index.html'; 
+  });
+</script>
+</body>
+</html>

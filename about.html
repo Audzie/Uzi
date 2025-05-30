@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Review Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="icon" href="gambar/f.png">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Header */
+    header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 110px;
+    margin-right: 110px;
+    padding: 20px 200px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    gap: 260px;
+    margin-left: 120px;
+    }
+
+  .hr-container {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hr-garis {
+    width: 63%;
+    height: 2px;
+    background-color: rgb(162, 162, 162);
+}
+
+.bulat-img {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bulat-img img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    }
+
+    .kotak-header {
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 163, 163, 1);
+        border-radius: 20px;
+        width: 450px;
+        height: 60px;
+        justify-content: center;
+        gap: 30px;
+        margin-right: 30px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header span {
+        color: #ff4d4d;
+        font-size: 19px;
+        font-weight: 900;
+        font-family: sans-serif;
+        font-weight: bold;
+
+    }
+
+    header button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    button:hover {
+        transform: translate(-2px, -1px);
+    }
+
+    .orang {
+        margin-left: 345px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .orang span {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    /* Header */
+    .konten-atas {
+        margin-top: 70px;
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        margin-bottom: 200px;
+    }
+
+    .teks-atas p {
+        font-size: 22px;
+    }
+    
+    .konten-atas h2 {
+        font-size: 60px;
+        font-weight: 900;
+        font-family: 'Playfair Display', serif;
+    }
+
+
+    .main-pizza {
+        width: 600px;
+        margin-top: 30px;
+        margin-left: -20px;
+        transform: rotate(-60deg);
+    }
+
+    .main-pizza {
+        position: relative;
+        z-index: 0;
+    }
+
+    .dish1 {
+        position: absolute;
+        right: 770px;
+        bottom: -70px;
+        width: 130px;    
+        height: auto;     
+        z-index: 1;
+        transition: 0.2s;
+    }
+
+    .dish1:hover {
+        transform: scale(0.97);
+    }
+
+    .dish2:hover {
+        transform: scale(0.97);
+    }
+
+    .dish2 {
+        position: absolute;
+        right: 380px;
+        bottom: 40px;
+        width: 150px;
+        height: auto;
+        z-index: 1;
+        transition: 0.2s;
+    }
+
+    .emoji1 {
+        cursor: pointer;
+        position: absolute;
+        background-color: white;
+        box-shadow: -3px 8px 10px -6px rgba(48, 48, 48, 1);
+        width: 195px;
+        height: 50px;
+        bottom: 260px;
+        z-index: 2;
+        border-radius: 30px;
+        left: 800px;
+        transition: 0.3s;
+    }
+
+    .emoji1:hover {
+        transform: rotate(2deg);
+    }
+
+    .emoji1 p {
+        opacity: 0.5;
+        position: absolute;
+        top: 12px;
+        left: 50px;
+    }
+
+    .emoji1 img {
+        cursor: pointer;
+        position: absolute;
+        width: 34px;
+        top: 7px;
+        left: 12px;
+        transition: 0.3s;
+    }
+
+    .badge {
+        cursor: pointer;
+        z-index: 2;
+        position: absolute;
+        right: 470px;
+        bottom: 400px;
+        transform: rotate(-10deg);
+        width: 195px;
+        height: 50px;
+        background: white;
+        border-radius: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        padding: 0 10px;
+        font-family: 'Segoe UI', sans-serif;
+        transition: 0.3s;
+    }
+
+    .badge:hover {
+        transform: rotate(-8deg);
+    }
+
+    .emoji-img {
+        cursor: pointer;
+        left: 10px;
+        bottom: 7px;
+        position: absolute;
+        width: 37px;
+        height: 37px;
+        border-radius: 50%;
+        transition: 0.2s;
+    }
+
+    .text-group {
+        position: absolute;
+        left: 50px;
+        display: flex;
+        flex-direction: column;
+        line-height: 1.1;
+    }
+
+    .title {
+        font-weight: 600;
+        font-size: 12px;
+        color: #333;
+    }
+
+    .rating {
+        font-size: 11px;
+        color: #666;
+        display: flex;
+        align-items: center;
+        gap: 3px;
+    }
+
+    .star {
+        color: #f5a623;
+        font-size: 12px;
+    }
+
+    .daun1 {
+        position: absolute;
+        width: 55px;
+        left: 520px;
+        bottom: 130px;
+        transform: scaleX(-1);
+    }
+
+    .daun2 {
+        position: absolute;
+        width: 60px;
+        bottom: -30px;
+        transform: rotate(-70deg);
+    }
+    
+    .button1 {
+        left: 650px;
+        bottom: 150px;
+        position: absolute;
+        cursor: pointer;
+        background-color: #F2F2F2;
+        width: 130px;
+        height: 45px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        font-size: 17px;
+        font-weight: 500;
+        transition: 0.3s;
+        box-shadow: 4px 8px 11px -4px rgba(158, 158, 158, 1);
+    }
+
+    .button1:hover {
+        transform: scale(0.97);
+        box-shadow: 0px 0px 0px rgb(0, 0, 0);
+    }
+
+    .button2:hover {
+        transform: scale(0.97);
+        box-shadow: 0px 0px 0px rgb(0, 0, 0);
+    }
+
+    .button1 img {
+        width: 25px;
+    }
+
+    .button2 {
+        box-shadow: 4px 8px 11px -4px rgba(158, 158, 158, 1);
+        transition: 0.3s;
+        left: 460px;
+        bottom: 180px;
+        position: absolute;
+        cursor: pointer;
+        background-color: #F2F2F2;
+        width: 142px;
+        height: 45px;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .button2 img {
+        width: 25px;
+    }
+
+    .daun-kiri {
+        position: absolute;
+        left: 0;
+        width: 200px;
+        bottom: -200px;
+    }
+    /*  */
+
+/* Footer */
+
+
+.footer {
+  margin-top: 200px;
+  background: #f8f8f8;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  color: #444;
+}
+
+.footer-top {
+  margin-right: 15%;
+  margin-left: 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.logo-area {
+  max-width: 250px;
+  margin-right: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 110px;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.footer-section h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section li {
+  cursor: pointer;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #999;
+}
+
+.footer-name {
+  color: orange;
+  font-weight: bold;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+
+.bulet {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #F7F7F9;
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.bulet:hover {
+    transform: translate(-1px,-1px);
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0px;
+}
+
+/*  */
+
+.bawah-main {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.kotak-bawah {
+  box-shadow: 2px 2px 8px -1px rgba(98, 98, 98, 1);
+  border-radius: 23px;
+  padding: 25px;
+  margin-top: 100px;
+  z-index: 1;
+  width: 440px;
+  height: 240px;
+  background-color: #F9F9F9;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.kotak-bawah p {
+  font-size: 16px;
+}
+
+.p-self {
+  display: flex;
+  justify-content: center;
+  background-color: #F6E4E4;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+}
+
+.hr-garis-bwh {
+  margin-top: 60px;
+    width: 63%;
+    height: 2px;
+    background-color: rgb(137, 137, 137);
+}
+
+.hr-container-bwh {
+  display: flex;
+  justify-content: center;
+}
+
+  .hr-container-1 {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hr-garis-1 {
+    width: 63%;
+    height: 2px;
+    background-color: rgb(137, 137, 137);
+}
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img width="100px" src="gambar/logo.png">
+        <span>Food Review Blog</span>
+        </div>
+
+            <div class="kotak-header">
+                <button><a href="home.html">Home</a></button>
+                <button><a href="restaurant.html">Restaurant</a></button>
+                <button  style="color: black; background: white; width: 80px; border-radius: 20px; height: 20px;"><a href="aboutfood.html">About</a></button>
+                <button><a href="profile.html">Profile</a></button>
+            </div>
+    </header>
+
+      <div class="hr-container">
+          <div class="hr-garis"></div>
+          <div class="bulat-img">
+      <img src="gambar/hr.png" alt="Logo">
+        </div>
+        </div>
+
+<div class="konten-atas">
+    <div class="teks-atas">
+        <h2>It's not just a Food</h2>
+        <h2 style="margin-bottom: 20px;">Its a Experience!</h2>
+        <p>This is Lorem ipsum dolor sit amet,</p>
+        <p>consectetur adisipicing elit.</p>
+        <p>Numquam eius vel tempore</p>
+        <p>consectetur nesciunt?</p>
+    </div>
+
+    <div class="gambar-atas">
+
+        <div class="badge">
+            <img src="gambar/emoji2.png" alt="Emoji" class="emoji-img">
+            <div class="text-group">
+                <div class="title">Our Happy Customer</div>
+                    <div class="rating">
+                        <span class="star">★</span>
+                <span>4.9</span>
+                        <span style="color:#aaa;">(1.989 Reviews)</span>
+                    </div>
+            </div>
+        </div>
+        
+        <div class="button1"><img src="gambar/kananr.png" alt="">About Us</div>
+        <div class="button2"><img src="gambar/kirir.png" alt="">Restaurant</div>
+        <div class="emoji1"><img src="gambar/emoji1.png" alt=""><p>Om-nom-nom....</p></div>
+        
+        <img src="gambar/daun.png" class="daun1" alt="">
+        <img src="gambar/daun.png" class="daun2" alt="">
+        <img src="gambar/pizzaa.png" class="main-pizza" alt="">
+        <img src="gambar/dish2.png" class="dish1" alt="">
+        <img src="gambar/dish3.png" class="dish2" alt="">
+        <img src="gambar/daun2.png" class="daun-kiri" alt="">
+    </div>
+</div>
+<!--  -->
+
+      <div class="hr-container-1">
+        <div class="hr-garis-1"></div>
+                <div class="bulat-img">
+        <img style="border-radius: 20px;" src="gambar/team.png" alt="Logo">
+        </div>
+      </div>
+
+      <div class="bawah-main">
+
+        <div class="kotak-bawah">
+          <p class="p-self" style="font-weight: 700; margin-bottom: 24px; font-size: 20px;">Help</p>
+          <p>Help Center</p>
+          <p>Help Forum</p>
+          <p>Vidio Tutorials</p>
+        </div>
+
+        <div class="kotak-bawah">
+          <p style="font-weight: 900; margin-bottom: 24px; font-size: 20px;">Developers</p>
+          <p>Md, Majharul Islam</p>
+          <p>Tanjila Islam</p>
+        </div>
+
+      </div>
+
+
+      <div class="hr-container-bwh">
+        <div class="hr-garis-bwh"></div>
+      </div>
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-section logo-area">
+      <img src="gambar/logo.png" alt="Logo" class="footer-logo" />
+      <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit. Mattis, tenetur.</p>
+      
+      <div class="footer-social">
+        <div class="bulet">
+            <img src="gambar/fb.png" alt="Facebook" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/twt.png" alt="Twitter" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/ig.png" alt="Instagram" />
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="footer-section">
+      <h2>Locations</h2>
+      <ul>
+        <li>Ambattur</li>
+        <li>Avadi</li>
+        <li>Thirumullaivoyal</li>
+        <li>Poonamallee</li>
+        <li>Mugappair</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="premier.html">Premier</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>Gallery</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Company</h2>
+      <ul>
+        <li>Terms & Conditions<a href="ketentuansyarat.html"></a></li>
+        <li>Privacy Policy</li>
+        <li>Cookie Policy</li>
+      </ul>
+    </div>
+  </div>
+
+<hr style="margin-top: 30px;">
+
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2022 <span class="footer-name">Majharul</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+<!-- Logut -->
+<script>
+            //log out
+        function confirmLogout() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Kamu Yakin?',
+        text: 'Kamu bakalan keluar dari akunmu loh!',
+        showCancelButton: true,
+        confirmButtonText: 'Iya, Logout',
+        cancelButtonText: 'Batal',
+        allowOutsideClick: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Simulasi logout
+          Swal.fire({
+            icon: 'Berhasil',
+            title: 'Logged Out!',
+            text: 'Cape ah kuar aja lu sono.',
+            confirmButtonText: 'Balik Ke Halaman Login',
+            allowOutsideClick: false,
+          }).then(() => {
+            // ke login.html
+            window.location.href = 'index.html';
+          });
+        }
+      });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="gambar/f.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+    /* Header */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 110px;
+        margin-right: 110px;
+        padding: 40px 200px;
+        margin-top: 10px;
+        margin-bottom: -15px;
+        gap: 120px;
+        margin-left: 180px;
+
+    }
+
+    .kotak-header {
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 163, 163, 1);
+        border-radius: 20px;
+        width: 450px;
+        height: 60px;
+        justify-content: center;
+        gap: 30px;
+        margin-right: 30px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header span {
+        color: #ff4d4d;
+        font-size: 19px;
+        font-weight: 900;
+        font-family: sans-serif;
+    }
+
+    header button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    button:hover {
+        transform: translate(-2px, -1px);
+    }
+
+    .orang {
+        margin-left: 345px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .orang span {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+.hr-container {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hr-garis {
+    width: 45%;
+    height: 2px;
+    background-color: black;
+}
+
+.bulat-img {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bulat-img img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    }
+/* Heder */
+
+.mahkota {
+    display: flex;
+    align-items: center;
+    margin-left: 570px;
+    font-weight: 900;
+    font-size: 18px;
+    gap: 10px;
+    margin-top: 110px;
+    margin-bottom: 110px;
+}
+
+.mahkota img {
+    width: 45px;
+}
+/* Kotak */
+.kotak {
+    width: 350px;
+    height: 560px;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #FFA6A6 -153.59deg,
+      rgba(79, 215, 133, 0.954177) 0.04deg,
+      rgba(103, 48, 48, 0.780677) 0.07deg,
+      rgba(255, 165, 165, 0.400764) 58.84deg,
+      rgba(184, 6, 6, 0.4) 74.4deg,
+      #FFA6A6 206.41deg,
+      rgba(79, 215, 133, 0.954177) 360.04deg
+    );
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kotak-dalem {
+    background: white;
+    width: 85%;
+    border-radius: 20px;
+    padding: 25px;
+    -webkit-box-shadow: 6px 6px 8px -3px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 6px 6px 8px -3px rgba(66, 68, 90, 1);
+    box-shadow: 6px 6px 8px -3px rgba(66, 68, 90, 1);
+    margin-bottom: 50px;
+}
+
+.kotak img.logo {
+    display: block;
+    margin: 5px auto 10px auto;
+    width: 110px;
+}
+
+.hr-kotak {
+    border: none;
+    border-top: 2px solid #333;
+    width: 85%;
+    margin: 0 auto 20px auto;
+}
+
+/* 1-2 */
+
+.main {
+    display: flex;
+    justify-content: center;
+    gap: 130px;
+    margin-bottom: 200px;
+}
+
+.harga {
+  text-align: left;
+  align-self: flex-start;
+  margin-left: 25px;
+  margin-bottom: 30px;
+}
+
+.harga p,
+.harga b {
+  text-align: left;
+  display: block;
+}
+
+.harga p {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+    font-weight: 500;
+}
+
+.harga b {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.ceklist {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 15px;
+}
+
+.continue-btn {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #78d78d;
+    color: white;
+    padding: 6px 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 00;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    -webkit-box-shadow: 0px 9px 3px -6px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 0px 9px 3px -6px rgba(66, 68, 90, 1);
+    box-shadow: 0px 9px 3px -6px rgba(66, 68, 90, 1);
+}
+
+.continue-btn:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.kotak-kecil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(241, 255, 230, 0.99);
+    width: 40px;
+    height: 30px;
+    border-radius: 5px ;
+}
+
+.kotak-kecil img {
+    cursor: pointer;
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+    transition: 0.3s;
+}
+
+.kotak-kecil img:hover {
+    transform: scale(1.3);
+}
+
+/* 2 */
+
+.kotak2 {
+    width: 350px;
+    height: 560px;
+    background: conic-gradient(
+    from 180deg at 50% 50%,
+    #EB5757 -100.72deg,
+    rgba(225, 55, 55, 0.64) 0.07deg,
+    rgba(246, 46, 46, 0.327544) 138.89deg,
+    rgba(166, 78, 78, 0.445406) 198.1deg,
+    #EB5757 259.28deg,
+    rgba(225, 55, 55, 0.64) 360.07deg
+    );
+
+
+    border-radius: 30px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kotak2-dalem {
+    background: white;
+    width: 85%;
+    border-radius: 20px;
+    padding: 25px;
+    -webkit-box-shadow: 6px 6px 8px -3px rgba(66, 68, 90, 1);
+    -moz-box-shadow: 6px 6px 8px -3px rgba(66, 68, 90, 1);
+    box-shadow: 6px 6px 8px -3px rgba(66, 68, 90, 1);
+    margin-bottom: 50px;
+}
+
+.kotak2 img.logo {
+    display: block;
+    margin: 5px auto 10px auto;
+    width: 110px;
+}
+
+.hr-kotak2 {
+    border: none;
+    border-top: 2px solid #333;
+    width: 85%;
+    margin: 0 auto 20px auto;
+}
+
+/* Footer */
+
+
+.footer {
+  background: #f8f8f8;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  color: #444;
+}
+
+.footer-top {
+  margin-right: 15%;
+  margin-left: 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.logo-area {
+  max-width: 250px;
+  margin-right: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 110px;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.footer-section h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section li {
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #999;
+}
+
+.footer-name {
+  color: orange;
+  font-weight: bold;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.bulet {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #F7F7F9;
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.bulet:hover {
+    transform: translate(-1px,-1px);
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0px;
+}
+/* Mahkota */
+</style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img width="100px" src="gambar/logo.png">
+        <span>Food Review Blog</span>
+        </div>
+
+            <div class="kotak-header">
+                <button><a href="home.html">Home</a></button>
+                <button><a href="restaurant.html">Restaurant</a></button>
+                <button style="color: black; background: white; width: 90px; border-radius: 20px; height: 23px;"><a href="aboutfood.html">Payment</a></button>
+                <button onclick="confirmLogout()">Logout</button>
+            </div>
+    </header>
+
+        <div class="hr-container">
+        <div class="hr-garis"></div>
+        <div class="bulat-img">
+            <img src="gambar/hr.png" alt="Logo">
+        </div>
+        </div>
+
+<div class="mahkota">
+    <span>Premier Customer</span>
+    <img src="gambar/premier.png" alt="">
+</div>
+
+<!-- Main -->
+
+<div class="main"> 
+    
+  <div class="kotak">
+    <img src="gambar/logo.png" alt="Logo" class="logo">
+    <hr class="hr-kotak">
+    <div class="harga">
+      <p>Total charge</p>
+      <b>20$</b>
+      <p>per month</p>
+    </div>
+
+    <div class="kotak-dalem">
+      <div class="ceklist">
+        <div class="kotak-kecil">
+            <img src="gambar/ceklist.png">
+        </div>
+        <span>100 post per month</span>
+      </div>
+
+      <div class="ceklist">
+        <div class="kotak-kecil">
+            <img src="gambar/ceklist.png">
+        </div>
+        <span>100 post per month</span>
+      </div>
+
+      <div class="ceklist">
+        <div class="kotak-kecil">
+            <img src="gambar/ceklist.png">
+        </div>
+        <span>100 post per month</span>
+      </div>
+
+      <div class="ceklist">
+        <div class="kotak-kecil">
+            <img src="gambar/ceklist.png">
+        </div>
+        <span>100 post per month</span>
+      </div>
+
+        <button class="continue-btn">Continue</button>
+    </div>
+  </div>
+  <!-- 2 -->
+  <div class="kotak2">
+    <img src="gambar/logo.png" alt="Logo" class="logo">
+    <hr class="hr-kotak">
+    <div class="harga">
+      <p>Total charge</p>
+      <b>165$</b>
+      <p>per year</p>
+    </div>
+
+    <div class="kotak-dalem">
+      <div class="ceklist">
+        <div class="kotak-kecil">
+            <img src="gambar/ceklist.png">
+        </div>
+        <span>unlimited everything</span>
+      </div>
+
+      <div class="ceklist">
+        <div class="kotak-kecil">
+            <img src="gambar/ceklist.png">
+        </div>
+        <span>unlimited everything</span>
+      </div>
+
+      <div class="ceklist">
+        <div class="kotak-kecil">
+            <img src="gambar/ceklist.png">
+        </div>
+        <span>unlimited everything</span>
+      </div>
+
+      <div class="ceklist">
+        <div class="kotak-kecil">
+            <img src="gambar/ceklist.png">
+        </div>
+        <span>unlimited everything</span>
+      </div>
+
+    <button style="background-color: rgba(187, 72, 99, 1);" class="continue-btn">Continue</button>
+  </div>
+</div>
+
+</div> <!-- Main -->
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-section logo-area">
+      <img src="gambar/logo.png" alt="Logo" class="footer-logo" />
+      <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit. Mattis, tenetur.</p>
+      
+      <div class="footer-social">
+        <div class="bulet">
+            <img src="gambar/fb.png" alt="Facebook" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/twt.png" alt="Twitter" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/ig.png" alt="Instagram" />
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="footer-section">
+      <h2>Locations</h2>
+      <ul>
+        <li>Ambattur</li>
+        <li>Avadi</li>
+        <li>Thirumullaivoyal</li>
+        <li>Poonamallee</li>
+        <li>Mugappair</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="premier.html">Premier</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>Gallery</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Company</h2>
+      <ul>
+        <li>Terms & Conditions<a href="ketentuansyarat.html"></a></li>
+        <li>Privacy Policy</li>
+        <li>Cookie Policy</li>
+      </ul>
+    </div>
+  </div>
+
+<hr style="margin-top: 20px;">
+
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2022 <span class="footer-name">Majharul</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+            //log out
+        function confirmLogout() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Kamu Yakin?',
+        text: 'Kamu bakalan keluar dari akunmu loh!',
+        showCancelButton: true,
+        confirmButtonText: 'Iya, Logout',
+        cancelButtonText: 'Batal',
+        allowOutsideClick: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Simulasi logout
+          Swal.fire({
+            icon: 'Berhasil',
+            title: 'Logged Out!',
+            text: 'Cape ah kuar aja lu sono.',
+            confirmButtonText: 'Balik Ke Halaman Login',
+            allowOutsideClick: false,
+          }).then(() => {
+            // ke login.html
+            window.location.href = 'index.html';
+          });
+        }
+      });
+    }
+</script>
+
+        </body>
+</html>

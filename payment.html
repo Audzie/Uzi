@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Review Blog</title>
+    <link rel="icon" href="gambar/f.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+/* Header */
+    header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 110px;
+    margin-right: 110px;
+    padding: 20px 200px;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    gap: 260px;
+    margin-left: 120px;
+    }
+
+    .hr-container {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hr-garis {
+    width: 54%;
+    height: 2px;
+    background-color: black;
+}
+
+.bulat-img {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bulat-img img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    }
+
+    .kotak-header {
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 163, 163, 1);
+        border-radius: 20px;
+        width: 450px;
+        height: 60px;
+        justify-content: center;
+        gap: 30px;
+        margin-right: 30px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    header span {
+        color: #ff4d4d;
+        font-size: 19px;
+        font-weight: 900;
+        font-family: sans-serif;
+        font-weight: bold;
+
+    }
+
+    header button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    button:hover {
+        transform: translate(-2px, -1px);
+    }
+
+    .orang {
+        margin-left: 345px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .orang span {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    /* Header */
+    .payment {
+    width: 400px;
+    margin-left: 110px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    font-family: sans-serif;
+}
+
+.payment h2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="titik"] {
+    width: 100%;
+    padding: 10px 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 16px;
+    border-bottom: 1px solid #000;
+}
+
+label {
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: normal;
+}
+
+input::placeholder {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+}
+
+.border-bawah-gabung {
+    display: flex;
+    gap: 10px;
+    border-bottom: 1px solid #000; 
+    margin-bottom: 15px;
+}
+
+.border-bawah-gabung input {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+}
+
+.card-form label {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-form .row {
+    display: flex;
+    gap: 10px;
+}
+
+.card-form .row input {
+    flex: 1;
+}
+
+.save-btn {
+    width: 100%;
+    background-color: white;
+    border: 1.5px solid green;
+    color: green;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.radio-bawah {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.radio-bawah label {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    font-size: 14px;
+}
+
+#radioo {
+    accent-color: green;
+    
+}
+
+
+/* Credit */
+.card-images {
+    display: flex;
+    gap: 20px;
+}
+/* 1 */
+
+.card-purple {
+    width: 190px;
+    height: 120px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #933CFF, #4746F0);
+    color: white;
+    position: relative;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.card-purple .chip img {
+    width: 23px;
+}
+
+.card-purple .master {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 25px;
+}
+
+.card-purple .titik {
+    margin-top: 5px;
+    margin-left: 0;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+}
+
+.card-purple .card-holder {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+.card-purple .nama {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card-purple .expired {
+    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-weight: 500;
+}
+.card-purple img {
+    width: 25px;
+}
+
+.titik {
+    font-size: 16px;
+    letter-spacing: px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* 2 */
+
+.card-green {
+    width: 190px;
+    height: 120px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #6ddf7d, #2cbf73);
+    color: white;
+    position: relative;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.card-green .chip img {
+    width: 23px;
+}
+
+.card-green .master {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 25px;
+}
+
+.card-green .titik {
+    margin-top: 5px;
+    margin-left: 0;
+    font-size: 15px;
+    letter-spacing: 1.2px;
+    margin-bottom: 10px;
+}
+
+.card-green .card-holder {
+    font-size: 10px;
+    opacity: 0.8;
+}
+
+.card-green .nama {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card-green .expired {
+    font-size: 12px;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-weight: 500;
+}
+.card-green img {
+    width: 25px;
+}
+
+.titik {
+    font-size: 16px;
+    letter-spacing: px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.card-purple .circle1,
+.card-purple .circle2,
+.card-green .circle1,
+.card-green .circle2 {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.card-purple .circle1 {
+    top: -60px;
+    right: -30px;
+    width: 140px;
+    height: 120px;
+}
+
+.card-purple .circle2 {
+    bottom: -65px;
+    left: -70px;
+    width: 180px;
+    height: 120px;
+}
+
+.card-green .circle1 {
+    top: -60px;
+    right: -30px;
+    width: 140px;
+    height: 120px;
+}
+
+.card-green .circle2 {
+    bottom: -65px;
+    left: -70px;
+    width: 180px;
+    height: 120px;
+}
+
+.credit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.credit h2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+.credit h2 img {
+    width: 29px;
+    height: 29px;
+}
+/* Credit */
+
+/* Ktak */
+
+  .main {
+    display: flex;
+    justify-content: center;
+    gap: 160px;
+    margin-top: 120px;
+  }
+
+  .kotak {
+    margin-left: 29px;
+    margin-top: 40px;
+    width: 430px;
+    height: 400px;
+    background: conic-gradient(
+      from 180deg at 50% 50%,
+      #FFA6A6 -153.59deg,
+      rgba(79, 215, 133, 0.954177) 0.04deg,
+      rgba(103, 48, 48, 0.780677) 0.07deg,
+      rgba(255, 165, 165, 0.400764) 58.84deg,
+      rgba(184, 6, 6, 0.4) 74.4deg,
+      #FFA6A6 206.41deg,
+      rgba(79, 215, 133, 0.954177) 360.04deg
+    );
+    border-radius: 30px;
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .kotak-dalem {
+    background: white;
+    width: 78%;
+    border-radius: 20px;
+    margin-top: -25px;
+    padding: 20px;
+    box-shadow: 6px 6px 8px -3px rgba(66, 68, 90, 1);
+    margin-bottom: 50px;
+  }
+
+  .kotak img.logo {
+    display: block;
+    margin: 5px auto 10px auto;
+    width: 110px;
+  }
+
+  .hr-kotak {
+    border: none;
+    border-top: 2px solid #333;
+    width: 85%;
+    margin: 0 auto 10px auto;
+  }
+
+  .harga {
+    text-align: left;
+    align-self: flex-start;
+    margin-left: 25px;
+    margin-bottom: 30px;
+  }
+
+  .harga p,
+  .harga b {
+    text-align: left;
+    display: block;
+  }
+
+  .harga p {
+    font-size: 9px;
+    color: #333;
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .harga b {
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .ceklist {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 15px;
+  }
+
+  .kotak-kecil {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(241, 255, 230, 0.99);
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+  }
+
+  .kotak-kecil img {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    transition: 0.3s;
+  }
+
+  .kotak-kecil img:hover {
+    transform: scale(1.3);
+  }
+
+  .continue-btn {
+    position: absolute;
+    bottom: 17px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #78d78d;
+    color: white;
+    padding: 6px 30px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0px 9px 3px -6px rgba(66, 68, 90, 1);
+  }
+
+  .continue-btn:hover {
+    transform: translateX(-50%) scale(1.05);
+    box-shadow: none;
+  }
+
+.shapes-wrapper {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 60px;
+}
+/* Penitng (shape bawah kotak) */
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.shapes-wraper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 60px;
+}
+
+.shape {
+  margin-top: 50px;
+  width: 280px;
+  height: 240px;
+  box-shadow: -1px 4px 12px -4px rgba(66, 68, 90, 1);
+  border-radius: 2px;
+  padding: 30px;
+  text-align: center;
+}
+
+.shape-1 {
+  display: flex;
+  background: rgba(255, 255, 255, 1);
+  flex-direction: column;
+}
+
+.shape-2 {
+  display: flex;
+  background: rgba(255, 255, 255, 1);
+  flex-direction: column;
+}
+
+.shape img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-top: -85px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+
+/* Footer */
+
+
+.footer {
+  margin-top: 200px;
+  background: #f8f8f8;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  color: #444;
+}
+
+.footer-top {
+  margin-right: 15%;
+  margin-left: 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.logo-area {
+  max-width: 250px;
+  margin-right: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 110px;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.footer-section h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section li {
+  cursor: pointer;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #999;
+}
+
+.footer-name {
+  color: orange;
+  font-weight: bold;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+
+.bulet {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #F7F7F9;
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.bulet:hover {
+    transform: translate(-1px,-1px);
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0px;
+}
+
+/*  */
+.shape p {
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+.kupon {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.kupon img {
+  cursor: pointer;
+  width: 60px;
+}
+
+.kupon p {
+  font-size: 20px;
+  text-decoration: underline;
+  text-decoration-color: #58f5a4;
+  margin-right: 33.5%;
+  text-align: center;
+  margin-top: -130px;
+}
+
+/*  */
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+        <img width="100px" src="gambar/logo.png">
+        <span>Food Review Blog</span>
+        </div>
+
+            <div class="kotak-header">
+                <button><a href="home.html">Home</a></button>
+                <button><a href="restaurant.html">Restaurant</a></button>
+                <button style="color: black; background: white; width: 90px; border-radius: 20px; height: 20px;"><a href="aboutfood.html">Payment</a></button>
+                <button onclick="confirmLogout()">Logout</button>
+            </div>
+    </header>
+
+      <div class="hr-container">
+          <div class="hr-garis"></div>
+          <div class="bulat-img">
+      <img src="gambar/hr.png" alt="Logo">
+        </div>
+        </div>
+
+    <!-- Main -->
+     <div class="main">
+
+        <div class="payment">
+        <h3>Payment</h3>
+            <div class="credit">
+<label style="display: flex; align-items: center; gap: 8px;">
+  <input id="radioo" type="radio" name="payment">
+  <img width="30px" src="gambar/payment.png" alt="Credit Card">
+  Credit/Debit Card
+</label>            
+</div>
+<p style="font-weight: 500; margin-left: 10px;" >Saved Cards</p>
+<div class="card-images">
+
+<div class="card-purple">
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+  <div class="chip">
+    <img src="gambar/silver.png" alt="Chip" />
+  </div>
+  <img src="gambar/master.png" class="master" alt="MasterCard" />
+  <div class="titik">•••• •••• •••• 289</div>
+  <div class="card-footer">
+    <div>
+      <div class="card-holder">Card Holder</div>
+      <div class="nama">Nico Robin</div>
+    </div>
+    <div class="expired">09/25</div>
+  </div>
+</div>
+
+<div class="card-green">
+  <div class="circle1"></div>
+  <div class="circle2"></div>
+  <div class="chip">
+    <img src="gambar/silver.png" alt="Chip" />
+  </div>
+  <img src="gambar/master.png" class="master" alt="MasterCard" />
+  <div class="titik">•••• •••• •••• 289</div>
+  <div class="card-footer">
+    <div>
+      <div class="card-holder">Card Holder</div>
+      <div class="nama">Nico Robin</div>
+    </div>
+    <div class="expired">09/25</div>
+  </div>
+</div>
+
+
+
+</div>
+
+<select>
+    <option>Add New Card</option>
+</select>
+
+<div class="card-form">
+    <label>Name on card</label>
+    <input type="text" placeholder="Majin Buu">
+
+    <label>Card Number</label>
+    <input type="tel" placeholder="1234 4567 7890 1234">
+
+    <label>Expired Date<span style="margin-left: 120px;">CVV</span></label>
+    <div class="row border-bawah-gabung">
+        <div>
+            <input type="text" placeholder="01/24">
+        </div>
+        <div>
+            <input type="titik" placeholder="***">
+        </div>
+    </div>
+
+    <button class="save-btn">Save</button>
+
+</div>
+
+<div class="radio-bawah">
+    <label><input id="radioo" type="radio" name="payment"> <img style="margin-bottom: 10px;" width="50px" src="gambar/upi.png"> UPI</label>
+    <label><input id="radioo" type="radio" name="payment"> <img width="35px" src="gambar/paypal.png"> PayPal</label>
+    <label><input id="radioo" type="radio" name="payment"> <img width="45px" src="gambar/gpay.png"> Google Pay</label>
+    <label><input id="radioo" type="radio" name="payment"> <img width="40px" src="gambar/net.png"> Net Banking</label>
+</div>
+    </div>
+
+<!-- bagian bikin mumed -->
+    <div class="left-section">
+<div class="kotak">
+  <img src="gambar/logo.png" alt="Logo" class="logo">
+  <hr class="hr-kotak">
+  <div class="harga">
+    <p>Total charge</p>
+    <b>20$</b>
+    <p>per month</p>
+  </div>
+
+  <div class="kotak-dalem">
+    <div class="ceklist">
+      <div class="kotak-kecil">
+        <img src="gambar/ceklist.png" alt="✔">
+      </div>
+      <span>100 post per month</span>
+    </div>
+    <div class="ceklist">
+      <div class="kotak-kecil">
+        <img src="gambar/ceklist.png" alt="✔">
+      </div>
+      <span>100 post per month</span>
+    </div>
+    <div class="ceklist">
+      <div class="kotak-kecil">
+        <img src="gambar/ceklist.png" alt="✔">
+      </div>
+      <span>100 post per month</span>
+    </div>
+    <div class="ceklist">
+      <div class="kotak-kecil">
+        <img src="gambar/ceklist.png" alt="✔">
+      </div>
+      <span>100 post per month</span>
+    </div>
+    <button class="continue-btn">Continue</button>
+  </div>
+</div>
+
+    <div class="shapes-wrapper">
+
+    
+      <div class="shape shape-1">
+    <img src="gambar/cewe.png" alt="Boa Hancock" />
+    <p>
+      These workouts are just what I need for a <span>busy lifestyle</span>. They are short , but hit everything<br>
+      maximising a <span>10–20 min</span> workout. <span>Well done!</span>
+    </p>
+    <h3>Boa Hancock</h3>
+  </div>
+
+  <div class="shape shape-2">
+    <img src="gambar/cowo.png" alt="Portgas D Ace" />
+    <p>
+      These workouts are just what I need for a <span>busy lifestyle</span>. They are short , but hit everything<br>
+      maximising a <span>10–20 min</span> workout. <span>Well done!</span>
+    </p>
+    <h3>Portgas D Ace</h3>
+    </div>
+
+    
+    
+  </div><!-- shape -->
+  </div> <!-- Left -->
+</div>  <!-- Si main -->
+<div class="kupon">
+<p>Get out Student Offers! <img src="gambar/kupon.png" alt=""></p>
+</div>
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-section logo-area">
+      <img src="gambar/logo.png" alt="Logo" class="footer-logo" />
+      <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit. Mattis, tenetur.</p>
+      
+      <div class="footer-social">
+        <div class="bulet">
+            <img src="gambar/fb.png" alt="Facebook" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/twt.png" alt="Twitter" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/ig.png" alt="Instagram" />
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="footer-section">
+      <h2>Locations</h2>
+      <ul>
+        <li>Ambattur</li>
+        <li>Avadi</li>
+        <li>Thirumullaivoyal</li>
+        <li>Poonamallee</li>
+        <li>Mugappair</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="premier.html">Premier</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>Gallery</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Company</h2>
+      <ul>
+        <li>Terms & Conditions<a href="ketentuansyarat.html"></a></li>
+        <li>Privacy Policy</li>
+        <li>Cookie Policy</li>
+      </ul>
+    </div>
+  </div>
+
+<hr style="margin-top: 30px;">
+
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2022 <span class="footer-name">Majharul</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+<script>
+            //log out
+        function confirmLogout() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Kamu Yakin?',
+        text: 'Kamu bakalan keluar dari akunmu loh!',
+        showCancelButton: true,
+        confirmButtonText: 'Iya, Logout',
+        cancelButtonText: 'Batal',
+        allowOutsideClick: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Simulasi logout
+          Swal.fire({
+            icon: 'Berhasil',
+            title: 'Logged Out!',
+            text: 'Cape ah kuar aja lu sono.',
+            confirmButtonText: 'Balik Ke Halaman Login',
+            allowOutsideClick: false,
+          }).then(() => {
+            // ke login.html
+            window.location.href = 'index.html';
+          });
+        }
+      });
+    }
+
+    // 
+
+document.querySelector('.save-btn').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  const name = document.querySelector('.card-form input[type="text"]').value.trim();
+  const cardNumber = document.querySelector('.card-form input[type="tel"]').value.trim();
+  const expiry = document.querySelector('.card-form .row input[placeholder="01/24"]').value.trim();
+  const cvv = document.querySelector('.card-form .row input[placeholder="***"]').value.trim();
+  const radioSelected = document.querySelector('input[name="payment"]:checked');
+
+  if (!name || !cardNumber || !expiry || !cvv || !radioSelected) {
+    // ❌ POPUP GAGAL
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops! 😓',
+      text: 'Mohon isi semua data dengan benar!',
+      confirmButtonText: 'Coba Lagi',
+      confirmButtonColor: '#f44336',
+      background: '#fff',
+      customClass: {
+        popup: 'rounded-4 shadow-lg',
+        title: 'fw-bold',
+        confirmButton: 'rounded-pill px-4'
+      }
+    });
+  } else {
+    // ✅ POPUP BERHASIL
+    Swal.fire({
+      title: '<strong>Success 😍</strong>',
+      text: 'Woah, pembayaran berhasil diproses!',
+      iconHtml: '<img src="https://cdn-icons-png.flaticon.com/512/845/845646.png" width="80" style="margin-top:10px;" />',
+      showCancelButton: true,
+      confirmButtonText: 'Profile',
+      cancelButtonText: 'Home',
+      confirmButtonColor: '#1abc9c',
+      cancelButtonColor: '#ecf0f1',
+      background: '#fff',
+      customClass: {
+        popup: 'rounded-4 shadow-lg',
+        title: 'fw-bold',
+        confirmButton: 'rounded-pill px-4 text-white',
+        cancelButton: 'rounded-pill px-4 text-dark'
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

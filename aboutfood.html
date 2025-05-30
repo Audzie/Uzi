@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Review Blog</title>
+    <link rel="icon" href="gambar/f.png">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    cursor: pointer;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+    /* Header */
+    header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 150px;
+    margin-right: 110px;
+    padding: 20px 200px;
+    margin-top: 35px;
+    margin-bottom: 10px;
+    gap: 50px;
+    }
+
+    .kotak-header {
+        display: flex;
+        align-items: center;
+        background-color: rgba(255, 163, 163, 1);
+        border-radius: 20px;
+        width: 450px;
+        height: 60px;
+        justify-content: center;
+        gap: 35px;
+        margin-right: 35px;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .logo img {
+        width: 100px;
+        transition: 0.3s;
+    }
+
+    .logo img:hover {
+        transform: scale(1.1);
+    }
+    header span {
+        color: #ff4d4d;
+        font-size: 19px;
+        font-weight: 900;
+        font-family: sans-serif;
+        font-weight: bold;
+
+    }
+
+    header button {
+        border: none;
+        background: none;
+        cursor: pointer;
+        font-size: 15px;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    header button:hover {
+        transform: translate(-2px, -1px);
+    }
+    /* Header */
+
+.hr-container {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.hr-garis {
+    width: 53%;
+    height: 2px;
+    background-color: black;
+}
+
+.bulat-img {
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bulat-img img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    transition: 0.4s;
+    }
+
+.bulat-img img:hover {
+    transform: scale(1.2);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.kotak {
+    box-shadow: 3px 9px 14px -13px rgba(66, 68, 90, 1);
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+    margin-top: 50px;
+    width: 50%;
+    height: 500px;
+    background: linear-gradient(to bottom, #96e4b2 0%, #f6e6de 100%);
+    padding: 30px 0;
+    gap: 15px;
+    }
+
+.gambar-wrapper {
+    display: flex;
+    justify-content: center;  
+    gap: 15px;
+}
+
+.kotak .img1,
+.kotak .img2 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 140px;
+    height: 180px;
+    border-radius: 35px;
+    transition: 0.5s;
+}
+
+.kotak .img1 {
+    transform: rotate(-15deg);
+}
+
+.kotak .img2 {
+    transform: rotate(15deg);
+}
+
+.kotak .img1:hover,
+.kotak .img2:hover {
+    transform: scale(1.2);
+}
+
+.teks-bawah {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+    width: 64%;
+    margin: 0 auto;
+}
+
+.kotak-judul {
+    margin-left: 30px;
+    width: 180px;
+    height: 60px;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: -60px;
+    border: 2px solid rgb(182, 182, 182);
+    box-shadow: 7px 10px 3px -3px rgba(0, 0, 0, 0.23);
+}
+
+.kotak button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 45px;
+    border-radius: 20px;
+    border: none;
+    background: #f9f9f9;
+    box-shadow: 0px 3px 5px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.kotak button:hover {
+    transform: scale(1.05);
+}
+
+.pala-batu img:hover {
+    transform: scale(1.07);
+}
+
+    .pala-batu img {
+        width: 35px;
+        transition: 0.3s;
+    }
+.pala-batu {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 20px;
+}
+
+/* Footer */
+
+
+.footer {
+  margin-top: 200px;
+  background: #f8f8f8;
+  padding: 40px;
+  font-family: Arial, sans-serif;
+  color: #444;
+}
+
+.footer-top {
+  margin-right: 15%;
+  margin-left: 15%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.logo-area {
+  max-width: 250px;
+  margin-right: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo {
+  width: 110px;
+  margin-bottom: 15px;
+}
+
+.footer-desc {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.footer-section h2 {
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section li {
+  cursor: pointer;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  margin-top: 25px;
+  font-size: 13px;
+  color: #999;
+}
+
+.footer-name {
+  color: orange;
+  font-weight: bold;
+}
+
+.footer-social {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+
+.bulet {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #F7F7F9;
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.bulet:hover {
+    transform: translate(-1px,-1px);
+}
+
+.footer-social img {
+  width: 20px;
+  height: 20px;
+  margin-right: 0px;
+}
+</style>
+</head>
+<body>
+        <header>
+        <div class="logo">
+        <img src="gambar/logo.png">
+        <span>Food Review Blog</span>
+        </div>
+
+            <div class="kotak-header">
+                <button style="color: black; background: white; width: 90px; border-radius: 20px; height: 20px;"><a href="aboutfood.html">Newsfeed</a></button>
+                <button><a href="restaurant.html">Restaurant</a></button>
+                <button><a href="profile.html">Profile</a></button>
+                <button onclick="confirmLogout()">Logout</button>
+            </div>
+        </header>
+
+      <div class="hr-container">
+          <div class="hr-garis"></div>
+          <div class="bulat-img">
+      <img src="gambar/food2.png" alt="Logo">
+        </div>
+        </div>
+
+      <!--  -->
+
+<div class="container">
+  <div class="kotak">
+
+        <div class="kotak-judul">
+            Majharul Islam
+        </div>
+
+    <div class="gambar-wrapper">
+      <img class="img1" src="gambar/makanan1.png" alt="">
+      <img class="img2" src="gambar/makanan2.png" alt="">
+    </div>
+
+
+        <p class="teks-bawah">The lorem ipsum gets its name from the Latin phrase Neque porro quisquam est qui dolorem ipsum quia dolor sit amet. which translates to “Nor is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain.”
+        </p>
+    <div class="pala-batu">
+        <button><img src="gambar/like.png" alt=""></button>
+        <button style="box-shadow: inset 37px 65px 20px -66px rgba(66, 68, 90, 1);"><img src="gambar/komen.png" alt=""></button>
+        <button><img src="gambar/share.png" alt=""></button>
+    </div>
+  </div>
+  <!-- 2 -->
+    <div style="  background: linear-gradient(to bottom, #9594BA, #FFEBEB00);
+                margin-top: 160px;" 
+    class="kotak">
+
+        <div class="kotak-judul">
+            Majharul Islam
+        </div>
+
+    <div class="gambar-wrapper">
+      <img class="img1" src="gambar/makanan3.png" alt="">
+      <img class="img2" src="gambar/makanan4.png" alt="">
+    </div>
+
+
+        <p class="teks-bawah">The lorem ipsum gets its name from the Latin phrase Neque porro quisquam est qui dolorem ipsum quia dolor sit amet. which translates to “Nor is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain.”
+        </p>
+    <div class="pala-batu">
+        <button><img src="gambar/like.png" alt=""></button>
+        <button style="box-shadow: inset 37px 65px 20px -66px rgba(66, 68, 90, 1);"><img src="gambar/komen.png" alt=""></button>
+        <button><img src="gambar/share.png" alt=""></button>
+    </div>
+  </div>
+</div>
+
+    <!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-section logo-area">
+      <img src="gambar/logo.png" alt="Logo" class="footer-logo" />
+      <p class="footer-desc">Lorem ipsum dolor sit amet consectetur adipiscing elit. Mattis, tenetur.</p>
+      
+      <div class="footer-social">
+        <div class="bulet">
+            <img src="gambar/fb.png" alt="Facebook" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/twt.png" alt="Twitter" />
+        </div>
+        <div class="bulet">
+            <img src="gambar/ig.png" alt="Instagram" />
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="footer-section">
+      <h2>Locations</h2>
+      <ul>
+        <li>Ambattur</li>
+        <li>Avadi</li>
+        <li>Thirumullaivoyal</li>
+        <li>Poonamallee</li>
+        <li>Mugappair</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Links</h2>
+      <ul>
+        <li><a href="payment.html">Payment</a></li>
+        <li><a href="premier.html">Premier</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>Gallery</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h2>Company</h2>
+      <ul>
+        <li>Terms & Conditions<a href="ketentuansyarat.html"></a></li>
+        <li>Privacy Policy</li>
+        <li>Cookie Policy</li>
+      </ul>
+    </div>
+  </div>
+
+<hr style="margin-top: 30px;">
+
+  <div class="footer-bottom">
+    <p>Copyright &copy; 2022 <span class="footer-name">Majharul</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+    
+
+<script>
+          //log out
+        function confirmLogout() {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Kamu Yakin?',
+        text: 'Kamu bakalan keluar dari akunmu loh!',
+        showCancelButton: true,
+        confirmButtonText: 'Iya, Logout',
+        cancelButtonText: 'Batal',
+        allowOutsideClick: false,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Simulasi logout
+          Swal.fire({
+            icon: 'Berhasil',
+            title: 'Logged Out!',
+            text: 'Cape ah kuar aja lu sono.',
+            confirmButtonText: 'Balik Ke Halaman Login',
+            allowOutsideClick: false,
+          }).then(() => {
+            // ke login.html
+            window.location.href = 'index.html';
+          });
+        }
+      });
+    }
+</script>
+    </body>
+</html>

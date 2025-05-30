@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Review Blog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
+  <link rel="icon" href="gambar/f.png">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: url('gambar/bg0.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .logo {
+      justify-content: center;
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .logo span {
+      font-size: 19px;
+      font-weight: 900;
+      color: red;
+      margin-left: 10px;
+    }
+
+    .imgg {
+      display: flex;
+      margin-top: 35px;
+      border-radius: 51px;
+      width: 130px;
+      height: 90px;
+      background-color: #D9D9D9;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 20px;
+    }
+
+    .imgg img {
+      height: 65px;
+    }
+
+    .main {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-right: 160px;
+      height: 75vh;
+    }
+
+    .kotak {
+      border-radius: 51px;
+      width: 500px;
+      height: 520px;
+      background-color: #ecd7d7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 1px 2px 5px 4px rgba(0, 0, 0, 0.26);
+    }
+
+    p {
+      font-size: 25px;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 80%;
+    }
+
+    input {
+      width: 74%;
+      padding: 23px;
+      margin-top: 15px;
+      border-radius: 15px;
+      border: 1px solid black;
+      text-align: center;
+      margin-bottom: 2px;
+      box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+      transition: 0.3;
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      width: 80%;
+      gap: 15px;
+      margin-top: 17px;
+      padding: 20px;
+      align-items: center;
+    }
+
+    .buttons span {
+        font-size: 18px;
+        font-weight: 550;
+        font-family: 'Poppins', sans-serif;        
+    }
+
+    .buttons img {
+        width: 10px;
+        align-self: center;
+    }
+
+    button {
+    cursor: pointer;
+    padding: 11px;
+    border-radius: 38px;
+    width: 200px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    button:hover {
+    transform: scale(1.05);
+    box-shadow: 2px 6px 16px rgba(0, 0, 0, 0.25);
+    opacity: 0.95;
+    }
+
+  .swal2-popup {
+    border-radius: 10px;
+  }
+
+  .swal2-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .swal2-confirm,
+  .swal2-cancel {
+    font-size: 16px;
+    padding: 10px 24px;
+    border-radius: 8px;
+  }
+
+/* Respon */
+
+@media (max-width: 768px) {
+  .main {
+    justify-content: center;
+    margin-right: 0;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .kotak {
+    width: 90%;
+    height: auto;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .logo span {
+    font-size: 16px;
+  }
+
+  .kotak {
+    border-radius: 30px;
+    padding: 15px 0;
+  }
+
+  p {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="gambar/logo.png" alt="Logo" height="80" />
+    <span>Food Review Blog</span>
+  </div>
+
+  <div class="main">
+    <div class="kotak">
+      <div class="imgg">
+        <img src="gambar/salam.jpeg" alt="Salam" />
+      </div>
+      <p>Welcome Back</p>
+
+      <form id="loginForm">
+        <input type="email" name="email" placeholder="majharul.islam03@northsouth.edu" required />
+        <input type="password" name="password" placeholder="*****password*****" required />
+
+        <div class="buttons">
+            <button id="loginBtn" style="background-color: rgba(140, 153, 221, 1);" type="submit" name="login" class="animated-button">
+            <span class="text">Next</span>
+            <img src="gambar/next.png" alt="">
+          </button>
+
+          <button type="button" style="background-color: rgba(183, 183, 183, 1);" onclick="location.href='daftar.html'">
+            <span class="text">Daftar</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+<!-- JS -->
+
+<script>
+  function showSuccess() {
+    Swal.fire({
+      title: '<strong>Success 😍</strong>',
+      text: 'Woah, successfully completed.',
+      icon: 'success',
+      iconColor: '#00C897',
+      background: 'white',
+      showCancelButton: true,
+      confirmButtonText: 'LogIn',
+      cancelButtonText: 'Cancel',
+      confirmButtonColor: '#00C897',
+      cancelButtonColor: '#d3d3d3',
+      reverseButtons: true,
+      customClass: {
+        popup: 'popup-class',
+        title: 'title-class',
+        confirmButton: 'confirm-btn-class',
+        cancelButton: 'cancel-btn-class'
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // arahkan ke home.html (atau ganti sesuai halaman kamu)
+        window.location.href = 'home.html';
+      }
+    });
+  }
+
+  // Tangkap event submit dari form
+  const form = document.getElementById('loginForm');
+  const loginBtn = document.getElementById('loginBtn');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault(); // cegah reload halaman
+    showSuccess(); // tampilkan popup
+  });
+</script>
+
+</body>
+</html>

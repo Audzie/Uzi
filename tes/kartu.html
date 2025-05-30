@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kartu Mastercard</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f2f2f2;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .card {
+      width: 350px;
+      height: 200px;
+      border-radius: 34px;
+      background: linear-gradient(135deg, #9b34ef, #3c51e6);
+      color: white;
+      padding: 20px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mastercard-logo {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 60px;
+    }
+
+    .dots {
+      font-size: 26px;
+      letter-spacing: 5px;
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+    }
+
+
+.card-holder {
+    font-size: 12px;
+    opacity: 0.7;
+    margin-left: 10px;
+    margin-top: 50px;
+}
+
+    .name {
+      font-size: 17px;
+      font-weight: 500;
+      margin-left: 10px;
+    }
+
+    .expiry {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* bayangan bulet */
+    .bulet1, .bulet2 {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .bulet1 {
+      width: 200px;
+      height: 150px;
+      top: -80px;
+      left: 250px;
+    }
+
+    .bulet2 {
+      width: 200px;
+      height: 200px;
+      bottom: -100px;
+      right: -10px;
+    }
+    .chip {
+        margin-top: 10px;
+        margin-left: 10px;
+        margin-bottom: 30px;
+    }
+    /*  */
+        .circle-top, .circle-bottom {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.08);
+      border-radius: 50%;
+    }
+
+    .circle-top {
+      top: -60px;
+      right: -30px;
+      width: 140px;
+      height: 120px;
+    }
+
+    .circle-bottom {
+      bottom: -65px;
+      left: -70px;
+      width: 180px;
+      height: 120px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="bulet1"></div>
+    <div class="bulet2"></div>
+    <div class="chip">
+        <img width="40px" src="gambar/silver.png" alt="">
+    </div>
+    <img src="gambar/master.png" alt="mastercard" class="mastercard-logo">
+    
+    <div class="dots">•••• •••• •••• •289</div>
+
+    <div class="card-holder">Card Holder</div>
+    <div class="name">Nico Robin</div>
+    <div class="expiry">09/25</div>
+  </div>
+</body>
+</html>
